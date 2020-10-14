@@ -214,3 +214,42 @@ input[type='submit'],
 button {
   font: inherit;
 }
+
+/**************************/
+/**************************/
+/* Component Specific CSS */
+/**************************/
+/**************************/
+
+/**************************/
+/*    Navbar Component    */
+/**************************/
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo__cloudIcon {
+  max-width: 110px;
+}
+
+.logo__weatherAppName {
+  font-size: clamp(1rem, 4vw, 1.3rem);
+}
+
+.forcast-type-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
