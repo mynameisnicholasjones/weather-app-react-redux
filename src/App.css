@@ -17,15 +17,3 @@ main {
   color: white;
   font-size: 10vw;
 }
-
-@media (max-width: 1024px) {
-  .main {
-    background-color: green;
-  }
-}
-
-@media (max-width: 450px) {
-  .main {
-    background-color: red;
-  }
-}
