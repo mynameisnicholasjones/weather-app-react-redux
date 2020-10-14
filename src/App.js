@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 // React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// Imported Components
+import Navbar from './components/layout/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        
+        <Navbar />
       </div>
     </Router>
   );
