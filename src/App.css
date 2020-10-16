@@ -253,3 +253,49 @@ button {
   justify-content: center;
   gap: 0.5rem;
 }
+
+/**************************/
+/*  Preloader Component   */
+/**************************/
+
+.loadingTextAndSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+}
+
+.loadingText {
+  /* Make the whitespace surrounding the 'Loading' text match the whitespace around the 'spinner' gif */
+  height: 5rem;
+  width: auto;
+  padding-left: 0.8rem;
+
+  /* Set the css for the 'Loading' text */
+  font-size: 3rem;
+  line-height: 1.6;
+
+  /* Make the color of the 'Loading' text black */
+  color: #000000;
+
+  /* Make the background color of the 'Loading' text match the background color of the 'spinner' gif */
+  background-color: #ffffff;
+}
+
+.loadingSpinner {
+  /* This is the height and width of the spinner container */
+  height: 5rem;
+  width: 5rem;
+
+  /* This is the CSS for the background image */
+  background-image: url(/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* This is the size of the spinner gif being used as the background image of the spinner container */
+  background-size: 12rem;
+
+  /* Space the spinner gif a little closer to the 'Loading' text */
+  margin-left: -0.7rem;
+  /* prevent the extra whitespace from the spinner gif from covering up the 'Loading' text by hiding the whitespace under the 'Loading' text by adjust the zIndex of the spinner gif */
+  z-index: -1;
+}
