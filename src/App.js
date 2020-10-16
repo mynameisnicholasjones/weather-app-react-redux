@@ -6,6 +6,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 
 function App() {
+  // App Component Level State
+  const [loading, setLoading] = useState(false);
+
   return (
     <Router>
       <div className="App">
