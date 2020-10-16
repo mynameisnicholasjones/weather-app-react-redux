@@ -8,8 +8,14 @@ import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunction
 import Navbar from './components/layout/Navbar';
 
 function App() {
-  // App Component Level StateS
+  // App Component Level State
+  // loading data type is: bool
   const [loading, setLoading] = useState(false);
+  // fiveDayWeatherForcastArray data type is: []
+  const [fiveDayWeatherForcastArray, setFiveDayWeatherForcastArray] 
+    = useState(null);
+  // weatherLocation data type is: string
+  const [weatherLocation, setWeatherLocation] = useState(null);
 
   useEffect(() => {
 
@@ -32,9 +38,26 @@ function App() {
 
       console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
 
-      // TODO: 
-        // 1.) Update function to store the city and country of the weather location using component state.
-        // 2.) Update function to store 5 days of weather data in an array to be used in displaying the weather data to the user.
+      setWeatherLocation(`${data.city.name}, ${data.city.country}`);
+
+      // Store 5 days of weather data in an array. This will be used to display either the current-day forcast or the five-day forcast to the user.
+      let fiveDayWeatherForcastTemporaryArray = [];
+
+      data.list.forEach((weatherObject, index) => {
+        // Get the first five weather objects that's index is divisible by 8
+        // IMPORTANT NOTE: The OpenWeatherMap.org API returns 40 items (i.e. index 0 through 39). This means that you will always get only five values that divide into 8 without any remainder (i.e. 0, 8, 16, 24, and 32).
+        // So it does not matter which time of day the database is quieried, you will always get the desired five weather objects.
+        if (index % 8 === 0) {
+          fiveDayWeatherForcastTemporaryArray.push(weatherObject);
+        }
+      });
+
+      // Console log the five weather objects to verify that the data is being retrieved correctly.
+      fiveDayWeatherForcastTemporaryArray.forEach((weatherObject, index) => {
+        console.log(`Weather Object ${(index + 1)}: ${JSON.stringify(weatherObject)}`);
+      })
+
+      setFiveDayWeatherForcastArray(fiveDayWeatherForcastTemporaryArray);
 
       setLoading(false);
     };
