@@ -35,7 +35,7 @@ const Search = () => {
         <input
           type="submit"
           value="Search"
-          className="btn"
+          className="btn btn-dark btn-block"
         />
       </form>
     </div>
