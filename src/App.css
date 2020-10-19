@@ -75,22 +75,9 @@ img {
   text-align: center;
 }
 
-/* Cards */
 .card {
   border: #ccc 1px dotted;
   padding: 1rem 0.75rem 0.75rem 0.75rem;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: var(--light-color);
-  color: #fff;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.2s ease-in;
 }
 
 .badge {
@@ -110,6 +97,23 @@ img {
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
 
 .btn-primary,
