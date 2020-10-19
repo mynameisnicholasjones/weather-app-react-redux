@@ -6,9 +6,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunctions';
 // Imported Components
 import Navbar from './components/layout/Navbar';
+import Search from './components/layout/Search';
 
 function App() {
-  // App Component Level State
   // loading data type is: bool
   const [loading, setLoading] = useState(false);
   // fiveDayWeatherForcastArray data type is: []
@@ -69,6 +69,9 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <main className="main-container">
+          <Search />
+        </main>
       </div>
     </Router>
   );
