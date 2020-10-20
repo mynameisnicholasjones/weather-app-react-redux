@@ -70,6 +70,12 @@ function App() {
     getWeatherForcastData(searchText);
   }, []);
 
+  // When showAlert is called, the alert is set and then removed after 5 seconds.
+  const showAlert = (alertText, alertType) => {
+    setAlert({ alertText: alertText, alertType: alertType });
+    setTimeout(() => setAlert(null), 5000);
+  };
+
   return (
     <Router>
       <div className="App">
