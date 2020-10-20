@@ -79,8 +79,11 @@ function App() {
       <div className="App">
         <Navbar />
         <main className="main-container">
-          <Alert />
-          <Search />
+          <Alert alert={alert} />
+          <Search
+            showAlert={showAlert} 
+            getWeatherForcastData={getWeatherForcastData}
+          />
         </main>
       </div>
     </Router>
