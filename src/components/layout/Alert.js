@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Alert = ({ alert }) => {
   // If the alert prop is null or undefined then return null,
@@ -13,5 +14,9 @@ const Alert = ({ alert }) => {
     )
   }
 };
+
+Alert.propTypes = {
+  alert: PropTypes.object.isRequired,
+}
 
 export default Alert;
