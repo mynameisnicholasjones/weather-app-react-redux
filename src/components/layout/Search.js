@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Search = () => {
+const Search = ({ showAlert, getWeatherForcastData }) => {
   // Component level state used in search input form.
   const [searchText, setSearchText] = useState('');
 
@@ -15,8 +15,10 @@ const Search = () => {
 
     if (searchText === '') {
       // Show alert
+      showAlert('Please enter a location', 'danger');
     } else {
       // Get the weather forcast
+      getWeatherForcastData(searchText);
 
       setSearchText('');
     }
