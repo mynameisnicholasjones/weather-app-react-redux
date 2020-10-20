@@ -21,54 +21,52 @@ function App() {
   const [weatherLocation, setWeatherLocation] = useState(null);
 
   useEffect(() => {
-
     // Location to get weather data for.
     const searchText = 'New York, US';
 
-    // This function searches for weather data based a given location. Ex: 'New York, US'. 
-    // This weather data will be output when the app initially loads in order to give the user default weather data.
-    const getWeatherForcastData = async (searchText) => {
-      setLoading(true);
-
-      // Determine which API call to make
-      const apiCallValue = getAPICallValueForOpenWeatherMapDotOrg(searchText);
-
-      // Make the fetch Get request
-      const res = await fetch(apiCallValue);
-
-      // Format the res into the data
-      const data = await res.json();
-
-      console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
-
-      setWeatherLocation(`${data.city.name}, ${data.city.country}`);
-
-      // Store 5 days of weather data in an array. This will be used to display either the current-day forcast or the five-day forcast to the user.
-      let fiveDayWeatherForcastTemporaryArray = [];
-
-      data.list.forEach((weatherObject, index) => {
-        // Get the first five weather objects that's index is divisible by 8
-        // IMPORTANT NOTE: The OpenWeatherMap.org API returns 40 items (i.e. index 0 through 39). This means that you will always get only five values that divide into 8 without any remainder (i.e. 0, 8, 16, 24, and 32).
-        // So it does not matter which time of day the database is quieried, you will always get the desired five weather objects.
-        if (index % 8 === 0) {
-          fiveDayWeatherForcastTemporaryArray.push(weatherObject);
-        }
-      });
-
-      // Console log the five weather objects to verify that the data is being retrieved correctly.
-      fiveDayWeatherForcastTemporaryArray.forEach((weatherObject, index) => {
-        console.log(`Weather Object ${(index + 1)}: ${JSON.stringify(weatherObject)}`);
-      })
-
-      setFiveDayWeatherForcastArray(fiveDayWeatherForcastTemporaryArray);
-
-      setLoading(false);
-    };
-
     // Call getWeatherForcastData one time as soon as the component loads.
-    // This weather data will be used to provide the user with default weather data as soon as the app is loads.
+    // This weather data will be output when the app initially loads in order to give the user default weather data.
     getWeatherForcastData(searchText);
   }, []);
+
+  // This function searches for weather data based a given location. Ex: 'New York, US'. 
+  const getWeatherForcastData = async (searchText) => {
+    setLoading(true);
+
+    // Determine which API call to make
+    const apiCallValue = getAPICallValueForOpenWeatherMapDotOrg(searchText);
+
+    // Make the fetch Get request
+    const res = await fetch(apiCallValue);
+
+    // Format the res into the data
+    const data = await res.json();
+
+    console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
+
+    setWeatherLocation(`${data.city.name}, ${data.city.country}`);
+
+    // Store 5 days of weather data in an array. This will be used to display either the current-day forcast or the five-day forcast to the user.
+    let fiveDayWeatherForcastTemporaryArray = [];
+
+    data.list.forEach((weatherObject, index) => {
+      // Get the first five weather objects that's index is divisible by 8
+      // IMPORTANT NOTE: The OpenWeatherMap.org API returns 40 items (i.e. index 0 through 39). This means that you will always get only five values that divide into 8 without any remainder (i.e. 0, 8, 16, 24, and 32).
+      // So it does not matter which time of day the database is quieried, you will always get the desired five weather objects.
+      if (index % 8 === 0) {
+        fiveDayWeatherForcastTemporaryArray.push(weatherObject);
+      }
+    });
+
+    // Console log the five weather objects to verify that the data is being retrieved correctly.
+    fiveDayWeatherForcastTemporaryArray.forEach((weatherObject, index) => {
+      console.log(`Weather Object ${(index + 1)}: ${JSON.stringify(weatherObject)}`);
+    })
+
+    setFiveDayWeatherForcastArray(fiveDayWeatherForcastTemporaryArray);
+
+    setLoading(false);
+  };
 
   // When showAlert is called, the alert is set and then removed after 5 seconds.
   const showAlert = (alertText, alertType) => {
