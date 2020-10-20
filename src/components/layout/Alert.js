@@ -1,14 +1,17 @@
 import React from 'react';
 
 const Alert = ({ alert }) => {
-  return (
-    // If the alert prop is not null or undefined, then output a styled div with the alert_text and alert_type
-    alert !== null || 'undefined' (
+  // If the alert prop is null or undefined then return null,
+  // else, return a styled div with the alert_text and alert_type.
+  if (alert === null || alert === 'undefined') {
+    return null;
+  } else {
+    return (
       <div className={`alert alert-${alert.alertType}`}>
         <i className="fas fa-info-circle" /> {alert.alertText}
       </div>
     )
-  );
+  }
 };
 
 export default Alert;
