@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Search = ({ showAlert, getWeatherForcastData }) => {
   // Component level state used in search input form.
@@ -43,5 +44,10 @@ const Search = ({ showAlert, getWeatherForcastData }) => {
     </div>
   );
 };
+
+Search.propTypes = {
+  showAlert: PropTypes.func.isRequired,
+  getWeatherForcastData: PropTypes.func.isRequired,
+}
 
 export default Search;
