@@ -6,9 +6,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunctions';
 // Imported Components
 import Navbar from './components/layout/Navbar';
+import Alert from './components/layout/Alert';
 import Search from './components/layout/Search';
 
 function App() {
+  // Alert data type is: {}
+  const [alert, setAlert] = useState(null);
   // loading data type is: bool
   const [loading, setLoading] = useState(false);
   // fiveDayWeatherForcastArray data type is: []
@@ -62,6 +65,8 @@ function App() {
       setLoading(false);
     };
 
+    // Call getWeatherForcastData one time as soon as the component loads.
+    // This weather data will be used to provide the user with default weather data as soon as the app is loads.
     getWeatherForcastData(searchText);
   }, []);
 
@@ -70,6 +75,7 @@ function App() {
       <div className="App">
         <Navbar />
         <main className="main-container">
+          <Alert />
           <Search />
         </main>
       </div>
