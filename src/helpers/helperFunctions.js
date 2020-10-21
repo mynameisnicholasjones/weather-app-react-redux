@@ -42,3 +42,60 @@ export const getAPICallValueForOpenWeatherMapDotOrg = (searchText) => {
     return weatherAPICallUsingCity;
   }
 };
+
+// This function shows the specific weather image based on weather type string passed to it.
+// For example: if weatherTypeString = 'Clouds', then the image for Clouds.png will be returned.
+export const getWeatherImage = (weatherTypeString) => {
+  switch (weatherTypeString) {
+    case 'Ash':
+      return <img src="/weatherImages/Ash.png" alt="Ash" />;
+
+    case 'Clear':
+      return <img src="/weatherImages/Clear.png" alt="Clear" />;
+
+    case 'Clouds':
+      return <img src="/weatherImages/Clouds.png" alt="Clouds" />;
+
+    case 'Drizzle':
+      return <img src="/weatherImages/Drizzle.png" alt="Drizzle" />;
+
+    case 'Dust':
+      return <img src="/weatherImages/Dust.png" alt="Dust" />;
+
+    case 'Fog':
+      return <img src="/weatherImages/Fog.png" alt="Fog" />;
+
+    case 'Haze':
+      return <img src="/weatherImages/Haze.png" alt="Haze" />;
+
+    case 'Mist':
+      return <img src="/weatherImages/Mist.png" alt="Mist" />;
+
+    case 'Rain':
+      return <img src="/weatherImages/Rain.png" alt="Rain" />;
+
+    case 'Sand':
+      return <img src="/weatherImages/Sand.png" alt="Sand" />;
+
+    case 'Smoke':
+      return <img src="/weatherImages/Smoke.png" alt="Smoke" />;
+
+    case 'Snow':
+      return <img src="/weatherImages/Snow.png" alt="Snow" />;
+
+    case 'Squall':
+      return <img src="/weatherImages/Squall.png" alt="Squall" />;
+
+    case 'Thunderstorm':
+      return <img src="/weatherImages/Thunderstorm.png" alt="Thunderstorm" />;
+
+    case 'Tornado':
+      return <img src="/weatherImages/Tornado.png" alt="Tornado" />;
+
+    default:
+      console.log(
+        `The icon for weather type [${weatherTypeString}] was not found.`
+      );
+      break;
+  }
+};
