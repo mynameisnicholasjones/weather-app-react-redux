@@ -9,15 +9,15 @@ import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/layout/Search';
 import WeatherHeader from './components/layout/WeatherHeader';
-import CurrentDayForcast from './components/weatherForcasts/CurrentDayForcast';
+import CurrentDayForecast from './components/weatherForecasts/CurrentDayForecast';
 
 function App() {
   // Alert data type is: {}
   const [alert, setAlert] = useState(null);
   // loading data type is: bool
   const [loading, setLoading] = useState(false);
-  // fiveDayWeatherForcastArray data type is: []
-  const [fiveDayWeatherForcastArray, setFiveDayWeatherForcastArray] 
+  // fiveDayWeatherForecastArray data type is: []
+  const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray] 
     = useState(null);
   // weatherLocation data type is: string
   const [weatherLocation, setWeatherLocation] = useState(null);
@@ -26,13 +26,13 @@ function App() {
     // Location to get weather data for.
     const searchText = 'New York, US';
 
-    // Call getWeatherForcastData one time as soon as the component loads.
+    // Call getWeatherForecastData one time as soon as the component loads.
     // This weather data will be output when the app initially loads in order to give the user default weather data.
-    getWeatherForcastData(searchText);
+    getWeatherForecastData(searchText);
   }, []);
 
   // This function searches for weather data based a given location. Ex: 'New York, US'. 
-  const getWeatherForcastData = async (searchText) => {
+  const getWeatherForecastData = async (searchText) => {
     setLoading(true);
 
     // Determine which API call to make
@@ -55,24 +55,24 @@ function App() {
       
       setWeatherLocation(`${data.city.name}, ${data.city.country}`);
 
-      // Store 5 days of weather data in an array. This will be used to display either the current-day forcast or the five-day forcast to the user.
-      let fiveDayWeatherForcastTemporaryArray = [];
+      // Store 5 days of weather data in an array. This will be used to display either the current-day forecast or the five-day forecast to the user.
+      let fiveDayWeatherForecastTemporaryArray = [];
 
       data.list.forEach((weatherObject, index) => {
         // Get the first five weather objects that's index is divisible by 8
         // IMPORTANT NOTE: The OpenWeatherMap.org API returns 40 items (i.e. index 0 through 39). This means that you will always get only five values that divide into 8 without any remainder (i.e. 0, 8, 16, 24, and 32).
         // So it does not matter which time of day the database is quieried, you will always get the desired five weather objects.
         if (index % 8 === 0) {
-          fiveDayWeatherForcastTemporaryArray.push(weatherObject);
+          fiveDayWeatherForecastTemporaryArray.push(weatherObject);
         }
       });
 
       // Console log the five weather objects to verify that the data is being retrieved correctly.
-      fiveDayWeatherForcastTemporaryArray.forEach((weatherObject, index) => {
+      fiveDayWeatherForecastTemporaryArray.forEach((weatherObject, index) => {
         console.log(`Weather Object ${(index + 1)}: ${JSON.stringify(weatherObject)}`);
       })
 
-      setFiveDayWeatherForcastArray(fiveDayWeatherForcastTemporaryArray);
+      setFiveDayWeatherForecastArray(fiveDayWeatherForecastTemporaryArray);
     }
 
     setLoading(false);
@@ -92,14 +92,14 @@ function App() {
           <Alert alert={alert} />
           <Search
             showAlert={showAlert} 
-            getWeatherForcastData={getWeatherForcastData}
+            getWeatherForecastData={getWeatherForecastData}
           />
           <WeatherHeader
             weatherLocation={weatherLocation}
             loading={loading}
           />
-          <CurrentDayForcast
-            fiveDayWeatherForcastArray={fiveDayWeatherForcastArray}
+          <CurrentDayForecast
+            fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
             loading={loading}
           />
         </main>

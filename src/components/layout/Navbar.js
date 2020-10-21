@@ -2,22 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const onClickToggleActiveForcastButton = (event) => {
-    const currentDayForcastBtn = document.getElementById(
-      'current-day-forcast-btn'
+  const onClickToggleActiveForecastButton = (event) => {
+    const currentDayForecastBtn = document.getElementById(
+      'current-day-forecast-btn'
     );
-    const fiveDayForcastBtn = document.getElementById('five-day-forcast-btn');
+    const fiveDayForecastBtn = document.getElementById('five-day-forecast-btn');
 
-    if (event.target.id === 'current-day-forcast-btn') {
-      currentDayForcastBtn.className = 'btn btn-active';
-      fiveDayForcastBtn.className = 'btn btn-not-active';
+    if (event.target.id === 'current-day-forecast-btn') {
+      currentDayForecastBtn.className = 'btn btn-active';
+      fiveDayForecastBtn.className = 'btn btn-not-active';
 
-      console.log('The Current Day Forcast Button is Active');
+      console.log('The Current Day Forecast Button is Active');
     } else {
-      fiveDayForcastBtn.className = 'btn btn-active';
-      currentDayForcastBtn.className = 'btn btn-not-active';
+      fiveDayForecastBtn.className = 'btn btn-active';
+      currentDayForecastBtn.className = 'btn btn-not-active';
 
-      console.log('The Five Day Forcast Button is Active');
+      console.log('The Five Day Forecast Button is Active');
     }
   };
 
@@ -35,22 +35,22 @@ const Navbar = () => {
           </div>
         </h1>
 
-        <nav className="forcast-type-nav">
+        <nav className="forecast-type-nav">
           <Link
-            id="five-day-forcast-btn"
+            id="five-day-forecast-btn"
             to="/"
             className="btn btn-active"
-            onClick={onClickToggleActiveForcastButton}
+            onClick={onClickToggleActiveForecastButton}
           >
-            Five-Day Forcast
+            Five-Day Forecast
           </Link>
           <Link
-            id="current-day-forcast-btn"
-            to="/current-day-forcast"
+            id="current-day-forecast-btn"
+            to="/current-day-forecast"
             className="btn btn-not-active"
-            onClick={onClickToggleActiveForcastButton}
+            onClick={onClickToggleActiveForecastButton}
           >
-            Current-Day Forcast
+            Current-Day Forecast
           </Link>
         </nav>
       </div>
