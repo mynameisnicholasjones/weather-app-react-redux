@@ -303,3 +303,12 @@ button {
   /* prevent the extra whitespace from the spinner gif from covering up the 'Loading' text by hiding the whitespace under the 'Loading' text by adjust the zIndex of the spinner gif */
   z-index: -1;
 }
+
+/***************************/
+/* WeatherHeader Component */
+/***************************/
+
+.weatherHeader {
+  text-align: center;
+  font-size: clamp(1.5rem, 11.5vw, 6rem);
+}
