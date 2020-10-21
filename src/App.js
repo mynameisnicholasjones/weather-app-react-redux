@@ -9,6 +9,7 @@ import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/layout/Search';
 import WeatherHeader from './components/layout/WeatherHeader';
+import CurrentDayForcast from './components/weatherForcasts/CurrentDayForcast';
 
 function App() {
   // Alert data type is: {}
@@ -95,6 +96,10 @@ function App() {
           />
           <WeatherHeader
             weatherLocation={weatherLocation}
+            loading={loading}
+          />
+          <CurrentDayForcast
+            fiveDayWeatherForcastArray={fiveDayWeatherForcastArray}
             loading={loading}
           />
         </main>
