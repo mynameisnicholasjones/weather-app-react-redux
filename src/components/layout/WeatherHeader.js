@@ -7,7 +7,7 @@ const WeatherHeader = ({ weatherLocation, loading }) => {
   if (loading) {
     return <Preloader />;
   } else {
-    return <div className="text-light">{weatherLocation}</div>;
+    return <div className="weatherHeader text-light">{weatherLocation}</div>;
   }
 };
 
