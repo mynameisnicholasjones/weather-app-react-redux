@@ -8,6 +8,7 @@ import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunction
 import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/layout/Search';
+import WeatherHeader from './components/layout/WeatherHeader';
 
 function App() {
   // Alert data type is: {}
@@ -91,6 +92,10 @@ function App() {
           <Search
             showAlert={showAlert} 
             getWeatherForcastData={getWeatherForcastData}
+          />
+          <WeatherHeader
+            weatherLocation={weatherLocation}
+            loading={loading}
           />
         </main>
       </div>
