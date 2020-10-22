@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// Imports for Components
 import Preloader from '../layout/Preloader';
+import ForecastItem from '../weatherForecasts/ForecastItem';
 
 const CurrentDayForecast = ({
   fiveDayWeatherForecastArray,
@@ -13,9 +15,10 @@ const CurrentDayForecast = ({
     return <Preloader />;
   } else {
     return (
-      // Output the weather description.
-      // TODO: Update this to output a ForecastItem component.
-      fiveDayWeatherForecastArray[0].weather[0].main
+      <ForecastItem
+        // Get the current day weather forcast object from the first element in the fiveDayWeatherForcastArray
+        singleDayWeatherForcastObject={fiveDayWeatherForecastArray[0]}
+      />
     );
   }
 };
