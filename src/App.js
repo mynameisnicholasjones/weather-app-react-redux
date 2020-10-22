@@ -10,6 +10,7 @@ import Alert from './components/layout/Alert';
 import Search from './components/layout/Search';
 import WeatherHeader from './components/layout/WeatherHeader';
 import CurrentDayForecast from './components/weatherForecasts/CurrentDayForecast';
+import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
 
 function App() {
   // Alert data type is: {}
@@ -99,6 +100,10 @@ function App() {
             loading={loading}
           />
           <CurrentDayForecast
+            fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+            loading={loading}
+          />
+          <FiveDayForecast
             fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
             loading={loading}
           />
