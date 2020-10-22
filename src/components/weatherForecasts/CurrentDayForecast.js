@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Preloader from '../layout/Preloader';
 
 const CurrentDayForecast = ({
@@ -18,5 +19,10 @@ const CurrentDayForecast = ({
     );
   }
 };
+
+CurrentDayForecast.propTypes = {
+  fiveDayWeatherForecastArray: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+}
 
 export default CurrentDayForecast;
