@@ -16,7 +16,7 @@ const CurrentDayForecast = ({
   } else {
     return (
       <ForecastItem
-        // Get the current day weather forcast object from the first element in the fiveDayWeatherForcastArray
+        // Get the current day weather forecast object from the first element in the fiveDayWeatherForcastArray
         singleDayWeatherForcastObject={fiveDayWeatherForecastArray[0]}
       />
     );
