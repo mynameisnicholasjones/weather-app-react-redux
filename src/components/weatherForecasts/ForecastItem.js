@@ -10,9 +10,9 @@ const ForecastItem = ({ singleDayWeatherForecastObject }) => {
     return <Preloader />;
   } else {
     return (
-      <div>
+      <div className='singleDayWeatherInfoContainer__currentDayForcast card'>
         {/* Day of the week */}
-        <div>
+        <div className='dayOfTheWeek__currentDayForcast text-light'>
           {/* Moment taking in a Unix Timestamp from the OpenWeatherMap.org API and formating the output to show the day of the week as a three letter day (ex. 'Sat') */}
           <Moment unix format="ddd">
               {singleDayWeatherForecastObject['dt']}
@@ -20,26 +20,24 @@ const ForecastItem = ({ singleDayWeatherForecastObject }) => {
         </div>
 
         {/* Weather Image */}
-        <div>
+        <div className="weatherImage">
           {getWeatherImage(singleDayWeatherForecastObject.weather[0].main)}
         </div>
 
-        <div>
+        <div className="weatherDetails text-light">
           {/* Weather Description */}
-          <div>
+          <div className="weatherDetails__weatherDescription">
             {singleDayWeatherForecastObject.weather[0].main}
           </div>
           {/* Weather Temperature */}
-          <div>
+          <div className="weatherDetails__weatherTemp">
             {Math.round(singleDayWeatherForecastObject.main.temp)} °F
           </div>
 
           {/* A 'Details" button */}
-          <div>
-            <button>
-              Details
-            </button>
-          </div>
+          <button className="weatherDetails__detailsBtn btn btn-dark btn-sm my-1">
+            Details
+          </button>
         </div>
 
       </div>
