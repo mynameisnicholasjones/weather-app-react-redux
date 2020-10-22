@@ -312,3 +312,47 @@ button {
   text-align: center;
   font-size: clamp(1.5rem, 11.5vw, 6rem);
 }
+
+/****************************/
+/* ForcastItem Component */
+/****************************/
+
+.singleDayWeatherInfoContainer__currentDayForcast {
+  display: flex;
+  flex-direction: row;
+}
+
+.dayOfTheWeek__currentDayForcast {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5rem, 12vw, 7rem);
+}
+
+.weatherImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherDetails__weatherDescription {
+  font-size: clamp(1rem, 4vw, 2.2rem);
+}
+
+.weatherDetails__weatherTemp {
+  font-size: clamp(1rem, 4vw, 2.2rem);
+}
+
+.weatherDetails__detailsBtn {
+  font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+}
