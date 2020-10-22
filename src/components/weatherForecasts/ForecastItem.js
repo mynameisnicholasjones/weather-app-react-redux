@@ -1,22 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 import { getWeatherImage } from '../../helpers/helperFunctions';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
-const ForecastItem = ({ singleDayWeatherForcastObject }) => {
-  if (singleDayWeatherForcastObject === null) {
+const ForecastItem = ({ singleDayWeatherForecastObject }) => {
+  if (singleDayWeatherForecastObject === null) {
     return <Preloader />;
   } else {
     return (
-      // TODO: Update component to display:
-      // Day of the week
-      // Weather Image
-      // Weather Description
-      // Weather Temperature
-      // A 'Details" button
       <div>
-        {getWeatherImage(singleDayWeatherForcastObject.weather[0].main)}
+        {/* Day of the week */}
+        <div>
+          {/* Moment taking in a Unix Timestamp from the OpenWeatherMap.org API and formating the output to show the day of the week as a three letter day (ex. 'Sat') */}
+          <Moment unix format="ddd">
+              {singleDayWeatherForecastObject['dt']}
+            </Moment>
+        </div>
+
+        {/* Weather Image */}
+        <div>
+          {getWeatherImage(singleDayWeatherForecastObject.weather[0].main)}
+        </div>
+
+        <div>
+          {/* Weather Description */}
+          <div>
+            {singleDayWeatherForecastObject.weather[0].main}
+          </div>
+          {/* Weather Temperature */}
+          <div>
+            {Math.round(singleDayWeatherForecastObject.main.temp)} °F
+          </div>
+
+          {/* A 'Details" button */}
+          <div>
+            <button>
+              Details
+            </button>
+          </div>
+        </div>
+
       </div>
     )
   }
