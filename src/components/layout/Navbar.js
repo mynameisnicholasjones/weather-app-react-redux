@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ getShowFiveDayForecastFlag }) => {
   const onClickToggleActiveForecastButton = (event) => {
     const currentDayForecastBtn = document.getElementById(
       'current-day-forecast-btn'
@@ -12,12 +12,18 @@ const Navbar = () => {
       currentDayForecastBtn.className = 'btn btn-active';
       fiveDayForecastBtn.className = 'btn btn-not-active';
 
-      console.log('The Current Day Forecast Button is Active');
+      console.log('The Current-Day Forecast Button is Active');
+
+      // Get the Boolean value to determine if the single-day forecast should be displayed or the five-day forecast should be displayed
+      getShowFiveDayForecastFlag(false);
     } else {
       fiveDayForecastBtn.className = 'btn btn-active';
       currentDayForecastBtn.className = 'btn btn-not-active';
 
-      console.log('The Five Day Forecast Button is Active');
+      console.log('The Five-Day Forecast Button is Active');
+
+      // Get the Boolean value to determine if the single-day forecast should be displayed or the five-day forecast should be displayed
+      getShowFiveDayForecastFlag(true);
     }
   };
 
