@@ -18,7 +18,7 @@ function App() {
   // loading data type is: bool
   const [loading, setLoading] = useState(false);
   // fiveDayWeatherForecastArray data type is: []
-  const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray] 
+  const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray]
     = useState(null);
   // NOTE: showFiveDayForecast data type is: Boolean
   const [showFiveDayForecastFlag, setShowFiveDayForecastFlag] = useState(null);
@@ -34,7 +34,13 @@ function App() {
     getWeatherForecastData(searchText);
   }, []);
 
-  // This function searches for weather data based a given location. Ex: 'New York, US'. 
+  // This function gets the value to be used in showFiveDayForecastFlag and
+  // then sets showFiveDayForecastFlag to that value.
+  const getShowFiveDayForecastFlag = (ShowFiveDayForecastFlagBooleanValue) => {
+    setShowFiveDayForecastFlag(ShowFiveDayForecastFlagBooleanValue);
+  };
+
+  // This function searches for weather data based a given location. Ex: 'New York, US'.
   const getWeatherForecastData = async (searchText) => {
     setLoading(true);
 
@@ -55,7 +61,7 @@ function App() {
 
     } else {
       console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
-      
+
       setWeatherLocation(`${data.city.name}, ${data.city.country}`);
 
       // Store 5 days of weather data in an array. This will be used to display either the current-day forecast or the five-day forecast to the user.
@@ -94,7 +100,7 @@ function App() {
         <main className="main-container">
           <Alert alert={alert} />
           <Search
-            showAlert={showAlert} 
+            showAlert={showAlert}
             getWeatherForecastData={getWeatherForecastData}
           />
           <WeatherHeader
