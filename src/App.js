@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 // React Router
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Imported helper functions
 import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunctions';
 // Imported Components
@@ -99,14 +99,32 @@ function App() {
             weatherLocation={weatherLocation}
             loading={loading}
           />
-          <CurrentDayForecast
-            fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-            loading={loading}
-          />
-          <FiveDayForecast
-            fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-            loading={loading}
-          />
+
+          <Switch>
+            {/* Route for CurrentDayForecast */}
+            <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <CurrentDayForecast
+                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                    loading={loading}
+                  />
+                )}
+              />
+
+              {/* Route for FiveDayForecast */}
+              <Route
+                exact
+                path="/five-day-forcast"
+                render={(props) => (
+                  <FiveDayForecast
+                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                    loading={loading}
+                  />
+                )}
+              />
+          </Switch>
         </main>
       </div>
     </Router>
