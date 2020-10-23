@@ -96,7 +96,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar getShowFiveDayForecastFlag={getShowFiveDayForecastFlag} />
         <main className="main-container">
           <Alert alert={alert} />
           <Search
