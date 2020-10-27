@@ -112,7 +112,7 @@ function App() {
             {/* Route for CurrentDayForecast */}
             <Route
                 exact
-                path="/"
+                path="/current-day-forecast"
                 render={(props) => (
                   <CurrentDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
@@ -124,7 +124,7 @@ function App() {
               {/* Route for FiveDayForecast */}
               <Route
                 exact
-                path="/five-day-forcast"
+                path="/"
                 render={(props) => (
                   <FiveDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
