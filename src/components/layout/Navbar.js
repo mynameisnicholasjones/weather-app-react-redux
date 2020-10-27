@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ getShowFiveDayForecastFlag }) => {
   const onClickToggleActiveForecastButton = (event) => {
-    const currentDayForecastBtn = document.getElementById(
-      'current-day-forecast-btn'
-    );
+    const currentDayForecastBtn = document.getElementById('current-day-forecast-btn');
     const fiveDayForecastBtn = document.getElementById('five-day-forecast-btn');
 
     if (event.target.id === 'current-day-forecast-btn') {
