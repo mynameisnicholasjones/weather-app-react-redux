@@ -109,29 +109,31 @@ function App() {
           />
 
           <Switch>
+
+            {/* Route for FiveDayForecast */}
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <FiveDayForecast
+                  fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                  loading={loading}
+                />
+              )}
+            />
+
             {/* Route for CurrentDayForecast */}
             <Route
-                exact
-                path="/current-day-forecast"
-                render={(props) => (
-                  <CurrentDayForecast
-                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                    loading={loading}
-                  />
-                )}
-              />
+              exact
+              path="/current-day-forecast"
+              render={(props) => (
+                <CurrentDayForecast
+                  fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                  loading={loading}
+                />
+              )}
+            />
 
-              {/* Route for FiveDayForecast */}
-              <Route
-                exact
-                path="/"
-                render={(props) => (
-                  <FiveDayForecast
-                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                    loading={loading}
-                  />
-                )}
-              />
           </Switch>
         </main>
       </div>
