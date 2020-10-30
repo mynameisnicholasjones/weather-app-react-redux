@@ -57,7 +57,7 @@ function App() {
     if (data.message === 'city not found') {
       console.log('city not found');
 
-      showAlert('Location was not found! Please enter a location.', 'danger');
+      showAlert(`Unable to find location: "${searchText}". Please try again.`, 'danger');
 
     } else {
       console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
