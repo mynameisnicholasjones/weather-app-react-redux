@@ -10,9 +10,9 @@ const ForecastItem = ({ singleDayWeatherForecastObject }) => {
     return <Preloader />;
   } else {
     return (
-      <div className='singleDayWeatherInfoContainer__currentDayForcast card'>
+      <div className='singleDayWeatherInfoContainer__currentDayForecast card'>
         {/* Day of the week */}
-        <div className='dayOfTheWeek__currentDayForcast text-light'>
+        <div className='dayOfTheWeek__currentDayForecast text-light'>
           {/* Moment taking in a Unix Timestamp from the OpenWeatherMap.org API and formating the output to show the day of the week as a three letter day (ex. 'Sat') */}
           <Moment unix format="ddd">
               {singleDayWeatherForecastObject['dt']}
@@ -29,6 +29,7 @@ const ForecastItem = ({ singleDayWeatherForecastObject }) => {
           <div className="weatherDetails__weatherDescription">
             {singleDayWeatherForecastObject.weather[0].main}
           </div>
+
           {/* Weather Temperature */}
           <div className="weatherDetails__weatherTemp">
             {Math.round(singleDayWeatherForecastObject.main.temp)} °F
@@ -46,7 +47,7 @@ const ForecastItem = ({ singleDayWeatherForecastObject }) => {
 }
 
 ForecastItem.propTypes = {
-  singleDayWeatherForcastObject: PropTypes.object.isRequired,
+  singleDayWeatherForecastObject: PropTypes.object.isRequired,
 }
 
 export default ForecastItem
