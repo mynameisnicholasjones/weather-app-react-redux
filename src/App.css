@@ -317,9 +317,14 @@ button {
 /* ForecastItem Component */
 /****************************/
 
+/* Mobile CSS for ForcastItem */
+
+.singleDayWeatherInfoContainer__fiveDayForecast {
+  display: flex;
+}
+
 .singleDayWeatherInfoContainer__currentDayForecast {
   display: flex;
-  flex-direction: row;
 }
 
 .dayOfTheWeek__currentDayForecast {
@@ -355,4 +360,12 @@ button {
 
 .weatherDetails__detailsBtn {
   font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+}
+
+
+/* Desktop CSS for ForcastItem */
+@media (min-width: 600px) {
+  .singleDayWeatherInfoContainer__fiveDayForecast {
+    flex-direction: column;
+  }
 }
