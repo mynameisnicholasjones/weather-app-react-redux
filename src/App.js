@@ -21,7 +21,7 @@ function App() {
   const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray]
     = useState(null);
   // NOTE: showFiveDayForecast data type is: Boolean
-  const [showFiveDayForecastFlag, setShowFiveDayForecastFlag] = useState(null);
+  const [showFiveDayForecastFlag, setShowFiveDayForecastFlag] = useState(true);
   // weatherLocation data type is: string
   const [weatherLocation, setWeatherLocation] = useState(null);
 
