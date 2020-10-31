@@ -5,7 +5,10 @@ import { getWeatherImage } from '../../helpers/helperFunctions';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
-const ForecastItem = ({ singleDayWeatherForecastObject }) => {
+const ForecastItem = ({
+  singleDayWeatherForecastObject,
+  showFiveDayForecastFlag,
+}) => {
   if (singleDayWeatherForecastObject === null) {
     return <Preloader />;
   } else {
