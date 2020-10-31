@@ -314,15 +314,15 @@ button {
 }
 
 /****************************/
-/* ForcastItem Component */
+/* ForecastItem Component */
 /****************************/
 
-.singleDayWeatherInfoContainer__currentDayForcast {
+.singleDayWeatherInfoContainer__currentDayForecast {
   display: flex;
   flex-direction: row;
 }
 
-.dayOfTheWeek__currentDayForcast {
+.dayOfTheWeek__currentDayForecast {
   flex: 1;
   display: flex;
   justify-content: center;
