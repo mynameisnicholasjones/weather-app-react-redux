@@ -13,7 +13,13 @@ const ForecastItem = ({
     return <Preloader />;
   } else {
     return (
-      <div className='singleDayWeatherInfoContainer__currentDayForecast card'>
+      <div
+        className={
+          showFiveDayForecastFlag ?
+            'singleDayWeatherInfoContainer__fiveDayForecast card' :
+            'singleDayWeatherInfoContainer__currentDayForecast card'
+        }
+      >
         {/* Day of the week */}
         <div className='dayOfTheWeek__currentDayForecast text-light'>
           {/* Moment taking in a Unix Timestamp from the OpenWeatherMap.org API and formating the output to show the day of the week as a three letter day (ex. 'Sat') */}
