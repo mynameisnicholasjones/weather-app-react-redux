@@ -118,6 +118,7 @@ function App() {
                 <FiveDayForecast
                   fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                   loading={loading}
+                  showFiveDayForecastFlag={showFiveDayForecastFlag}
                 />
               )}
             />
@@ -130,6 +131,7 @@ function App() {
                 <CurrentDayForecast
                   fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                   loading={loading}
+                  showFiveDayForecastFlag={showFiveDayForecastFlag}
                 />
               )}
             />
