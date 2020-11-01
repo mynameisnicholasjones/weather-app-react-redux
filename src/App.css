@@ -384,7 +384,7 @@ button {
 }
 
 
-/* Desktop CSS for ForcastItem */
+/* Tablet / Desktop CSS for ForecastItem */
 @media (min-width: 600px) {
   .singleDayWeatherInfoContainer__fiveDayForecast {
     flex-direction: column;
