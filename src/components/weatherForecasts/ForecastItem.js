@@ -21,7 +21,7 @@ const ForecastItem = ({
         }
       >
         {/* Day of the week */}
-        <div className='dayOfTheWeek__currentDayForecast text-light'>
+        <div className='dayOfTheWeek text-light'>
           {/* Moment taking in a Unix Timestamp from the OpenWeatherMap.org API and formating the output to show the day of the week as a three letter day (ex. 'Sat') */}
           <Moment unix format="ddd">
               {singleDayWeatherForecastObject['dt']}
