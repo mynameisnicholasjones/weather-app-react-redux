@@ -313,6 +313,27 @@ button {
   font-size: clamp(1.5rem, 11.5vw, 6rem);
 }
 
+/*****************************/
+/* FiveDayForecast Component */
+/*****************************/
+
+/* Mobile CSS for FiveDayForecast */
+
+.displayFiveDayForecast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Tablet / Desktop CSS for FiveDayForecast */
+
+@media (min-width: 600px) {
+  .displayFiveDayForecast {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 /****************************/
 /* ForecastItem Component */
 /****************************/
