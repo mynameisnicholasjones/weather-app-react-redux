@@ -16,7 +16,7 @@ const FiveDayForecast = ({
     return <Preloader />;
   } else {
     return (
-      <div>
+      <div className={showFiveDayForecastFlag && 'displayFiveDayForecast'}>
         {/* NOTE: The OpenWeatherMap.org API did not include a 'city: id' for the Five Day Forecast, which means that I have to use the 'last resort' of using the array index of each singleDayWeatherForecastObject as the key value */}
         {fiveDayWeatherForecastArray.map(
           (singleDayWeatherForecastObject, index) => (
