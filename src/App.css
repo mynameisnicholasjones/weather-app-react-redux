@@ -348,7 +348,7 @@ button {
   display: flex;
 }
 
-.dayOfTheWeek__currentDayForecast {
+.dayOfTheWeek {
   flex: 1;
   display: flex;
   justify-content: center;
