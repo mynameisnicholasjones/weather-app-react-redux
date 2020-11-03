@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 import { getWeatherImage } from '../../helpers/helperFunctions';
 // Imports for Components
 import Preloader from '../layout/Preloader';
@@ -10,7 +11,7 @@ const ForecastItem = ({
   showFiveDayForecastFlag,
   getUserClickedWeatherForecastObject,
 }) => {
-  const onClickGetUserClickedWeatherForcastObject = () => {
+  const onClickGetUserClickedWeatherForecastObject = () => {
     getUserClickedWeatherForecastObject(singleDayWeatherForecastObject);
   };
 
@@ -50,9 +51,13 @@ const ForecastItem = ({
           </div>
 
           {/* A 'Details" button */}
-          <button className="weatherDetails__detailsBtn btn btn-dark btn-sm my-1">
+          <Link
+            to="/more-details-single-day-forecast"
+            className="weatherDetails__detailsBtn btn btn-dark btn-sm my-1"
+            onClick={onClickGetUserClickedWeatherForecastObject}
+          >
             Details
-          </button>
+          </Link>
         </div>
 
       </div>
