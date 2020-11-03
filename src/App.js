@@ -43,6 +43,12 @@ function App() {
     setShowFiveDayForecastFlag(ShowFiveDayForecastFlagBooleanValue);
   };
 
+  // This function sets the userClickedWeatherForecastObject state to be
+  // equal to the single day weather forecast object that the user clicked on.
+  const getUserClickedWeatherForecastObject = (singleDayWeatherForecastObject) => {
+    setUserClickedWeatherForecastObject(singleDayWeatherForecastObject);
+  };
+
   // This function searches for weather data based a given location. Ex: 'New York, US'.
   const getWeatherForecastData = async (searchText) => {
     setLoading(true);
