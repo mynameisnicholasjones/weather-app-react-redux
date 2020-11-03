@@ -10,6 +10,10 @@ const ForecastItem = ({
   showFiveDayForecastFlag,
   getUserClickedWeatherForecastObject,
 }) => {
+  const onClickGetUserClickedWeatherForcastObject = () => {
+    getUserClickedWeatherForcastObjectAction(singleDayWeatherForcastObject);
+  };
+
   if (singleDayWeatherForecastObject === null) {
     return <Preloader />;
   } else {
