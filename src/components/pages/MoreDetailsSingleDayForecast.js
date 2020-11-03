@@ -75,7 +75,6 @@ const MoreDetailsSingleDayForecast = ({
 
             {/* Back Button */}
             <Link
-              to="/"
               className="btn btn-dark btn-sm"
               style={{
                 fontSize: 'clamp(0.7rem, 2vw, 1.5rem)',
