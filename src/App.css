@@ -358,6 +358,7 @@ button {
 
 .weatherImage {
   flex: 1;
+  padding-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,5 +391,10 @@ button {
 @media (min-width: 600px) {
   .singleDayWeatherInfoContainer__fiveDayForecast {
     flex-direction: column;
+  }
+
+  /* Remove right padding in tablet / desktop view */
+  .weatherImage {
+    padding-right: 0;
   }
 }
