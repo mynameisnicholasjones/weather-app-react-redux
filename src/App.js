@@ -11,6 +11,7 @@ import Search from './components/layout/Search';
 import WeatherHeader from './components/layout/WeatherHeader';
 import CurrentDayForecast from './components/weatherForecasts/CurrentDayForecast';
 import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
+import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDayForecast';
 
 function App() {
   // Alert data type is: {}
@@ -132,6 +133,17 @@ function App() {
                   fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                   loading={loading}
                   showFiveDayForecastFlag={showFiveDayForecastFlag}
+                />
+              )}
+            />
+
+            {/* Route for MoreDetailsSingleDayForecast */}
+            <Route
+              exact
+              path="/more-details-single-day-forecast"
+              render={(props) => (
+                <MoreDetailsSingleDayForecast
+                  loading={loading}
                 />
               )}
             />
