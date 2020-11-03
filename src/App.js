@@ -157,6 +157,9 @@ function App() {
               path="/more-details-single-day-forecast"
               render={(props) => (
                 <MoreDetailsSingleDayForecast
+                  userClickedWeatherForecastObject={
+                    userClickedWeatherForecastObject
+                  }
                   loading={loading}
                 />
               )}
