@@ -11,7 +11,7 @@ const ForecastItem = ({
   getUserClickedWeatherForecastObject,
 }) => {
   const onClickGetUserClickedWeatherForcastObject = () => {
-    getUserClickedWeatherForcastObjectAction(singleDayWeatherForcastObject);
+    getUserClickedWeatherForecastObject(singleDayWeatherForecastObject);
   };
 
   if (singleDayWeatherForecastObject === null) {
