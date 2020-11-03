@@ -23,6 +23,8 @@ function App() {
     = useState(null);
   // NOTE: showFiveDayForecast data type is: Boolean
   const [showFiveDayForecastFlag, setShowFiveDayForecastFlag] = useState(true);
+  // NOTE: userClickedWeatherForecastObject data type is: {}
+  const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
   // weatherLocation data type is: string
   const [weatherLocation, setWeatherLocation] = useState(null);
 
