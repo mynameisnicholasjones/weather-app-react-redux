@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Moment from 'react-moment';
 import {
   getWeatherImage,
@@ -11,6 +11,13 @@ const MoreDetailsSingleDayForecast = ({
   userClickedWeatherForecastObject,
   loading,
 }) => {
+  // Use the useHistory hook from react-router-dom to make clicking the back button go to the previous page.
+  const history = useHistory();
+
+  const onClickGoToPreviousPage = () => {
+    history.goBack();
+  };
+
   if (userClickedWeatherForecastObject === null) {
     return null;
   } else if (loading) {
@@ -74,6 +81,7 @@ const MoreDetailsSingleDayForecast = ({
                 fontSize: 'clamp(0.7rem, 2vw, 1.5rem)',
                 margin: '0.7em',
               }}
+              onClick={onClickGoToPreviousPage}
             >
               Back
             </Link>
