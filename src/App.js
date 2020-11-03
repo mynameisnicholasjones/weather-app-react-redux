@@ -128,6 +128,9 @@ function App() {
                   fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                   loading={loading}
                   showFiveDayForecastFlag={showFiveDayForecastFlag}
+                  getUserClickedWeatherForecastObject={
+                    getUserClickedWeatherForecastObject
+                  }
                 />
               )}
             />
@@ -141,6 +144,9 @@ function App() {
                   fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                   loading={loading}
                   showFiveDayForecastFlag={showFiveDayForecastFlag}
+                  getUserClickedWeatherForecastObject={
+                    getUserClickedWeatherForecastObject
+                  }
                 />
               )}
             />
