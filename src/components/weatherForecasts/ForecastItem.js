@@ -8,6 +8,7 @@ import Preloader from '../layout/Preloader';
 const ForecastItem = ({
   singleDayWeatherForecastObject,
   showFiveDayForecastFlag,
+  getUserClickedWeatherForecastObject,
 }) => {
   if (singleDayWeatherForecastObject === null) {
     return <Preloader />;
