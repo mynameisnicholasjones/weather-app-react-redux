@@ -381,9 +381,8 @@ button {
 }
 
 .weatherDetails__detailsBtn {
-  /* font-size: clamp(0.7rem, 2.5vw, 1.5rem); */
   font-size: clamp(0.7rem, 2vw, 1.5rem);
-  margin-bottom: 1rem;
+  margin: 0.7em;
 }
 
 
