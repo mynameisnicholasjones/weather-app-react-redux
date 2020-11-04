@@ -382,7 +382,7 @@ button {
 
 .weatherDetails__detailsBtn {
   font-size: clamp(0.7rem, 2vw, 1.5rem);
-  margin: 0.7em;
+  margin: 0.7em 0;
 }
 
 
