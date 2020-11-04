@@ -64,11 +64,11 @@ const MoreDetailsSingleDayForecast = ({
               alignItems: 'center',
             }}
           >
-            <div style={{ fontSize: 'clamp(1rem, 5vw, 2.2rem)' }}>
+            <div style={{ fontSize: 'clamp(1rem, 4vw, 2.2rem)' }}>
               {/* Weather Description:{' '} */}
               {userClickedWeatherForecastObject.weather[0].main}
             </div>
-            <div style={{ fontSize: 'clamp(1rem, 5vw, 2.2rem)' }}>
+            <div style={{ fontSize: 'clamp(1rem, 4vw, 2.2rem)' }}>
               {/* Tempurature:{' '} */}
               {Math.round(userClickedWeatherForecastObject.main.temp)} °F
             </div>
