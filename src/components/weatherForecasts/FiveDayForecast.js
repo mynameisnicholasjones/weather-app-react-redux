@@ -37,7 +37,7 @@ const FiveDayForecast = ({
 };
 
 FiveDayForecast.propTypes = {
-  fiveDayWeatherForecastArray: PropTypes.array.isRequired,
+  fiveDayWeatherForecastArray: PropTypes.array,
   loading: PropTypes.bool.isRequired,
 }
 
