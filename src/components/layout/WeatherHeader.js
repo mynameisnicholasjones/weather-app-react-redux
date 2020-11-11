@@ -15,7 +15,7 @@ const WeatherHeader = ({ weatherLocation, loading }) => {
 };
 
 WeatherHeader.propTypes = {
-  weatherLocation: PropTypes.string.isRequired,
+  weatherLocation: PropTypes.string,
   loading: PropTypes.bool.isRequired,
 }
 
