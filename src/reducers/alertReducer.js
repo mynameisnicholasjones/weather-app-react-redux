@@ -1,4 +1,4 @@
-import {  } from '../actions/types';
+import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
 
 // Create the initial state of the forcastsReducer
 const initialState = {
