@@ -4,6 +4,9 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Imported helper functions
 import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunctions';
+// Imports for Redux
+import { Provider } from 'react-redux';
+import store from './store';
 // Imported Components
 import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
@@ -103,72 +106,74 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Navbar getShowFiveDayForecastFlag={getShowFiveDayForecastFlag} />
-        <main className="main-container">
-          <Alert alert={alert} />
-          <Search
-            showAlert={showAlert}
-            getWeatherForecastData={getWeatherForecastData}
-          />
-          <WeatherHeader
-            weatherLocation={weatherLocation}
-            loading={loading}
-          />
-
-          <Switch>
-
-            {/* Route for FiveDayForecast */}
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <FiveDayForecast
-                  fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                  loading={loading}
-                  showFiveDayForecastFlag={showFiveDayForecastFlag}
-                  getUserClickedWeatherForecastObject={
-                    getUserClickedWeatherForecastObject
-                  }
-                />
-              )}
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar getShowFiveDayForecastFlag={getShowFiveDayForecastFlag} />
+          <main className="main-container">
+            <Alert alert={alert} />
+            <Search
+              showAlert={showAlert}
+              getWeatherForecastData={getWeatherForecastData}
+            />
+            <WeatherHeader
+              weatherLocation={weatherLocation}
+              loading={loading}
             />
 
-            {/* Route for CurrentDayForecast */}
-            <Route
-              exact
-              path="/current-day-forecast"
-              render={(props) => (
-                <CurrentDayForecast
-                  fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                  loading={loading}
-                  showFiveDayForecastFlag={showFiveDayForecastFlag}
-                  getUserClickedWeatherForecastObject={
-                    getUserClickedWeatherForecastObject
-                  }
-                />
-              )}
-            />
+            <Switch>
 
-            {/* Route for MoreDetailsSingleDayForecast */}
-            <Route
-              exact
-              path="/more-details-single-day-forecast"
-              render={(props) => (
-                <MoreDetailsSingleDayForecast
-                  userClickedWeatherForecastObject={
-                    userClickedWeatherForecastObject
-                  }
-                  loading={loading}
-                />
-              )}
-            />
+              {/* Route for FiveDayForecast */}
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <FiveDayForecast
+                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                    loading={loading}
+                    showFiveDayForecastFlag={showFiveDayForecastFlag}
+                    getUserClickedWeatherForecastObject={
+                      getUserClickedWeatherForecastObject
+                    }
+                  />
+                )}
+              />
 
-          </Switch>
-        </main>
-      </div>
-    </Router>
+              {/* Route for CurrentDayForecast */}
+              <Route
+                exact
+                path="/current-day-forecast"
+                render={(props) => (
+                  <CurrentDayForecast
+                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
+                    loading={loading}
+                    showFiveDayForecastFlag={showFiveDayForecastFlag}
+                    getUserClickedWeatherForecastObject={
+                      getUserClickedWeatherForecastObject
+                    }
+                  />
+                )}
+              />
+
+              {/* Route for MoreDetailsSingleDayForecast */}
+              <Route
+                exact
+                path="/more-details-single-day-forecast"
+                render={(props) => (
+                  <MoreDetailsSingleDayForecast
+                    userClickedWeatherForecastObject={
+                      userClickedWeatherForecastObject
+                    }
+                    loading={loading}
+                  />
+                )}
+              />
+
+            </Switch>
+          </main>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
