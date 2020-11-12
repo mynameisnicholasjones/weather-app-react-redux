@@ -16,6 +16,14 @@ export default (state = initialState, action) => {
         alert: action.payload,
       };
 
+    case REMOVE_ALERT:
+      console.log('Remove Alert!');
+      return {
+        ...state,
+        // payload: null
+        alert: action.payload,
+      };
+
     default:
       return state;
   }
