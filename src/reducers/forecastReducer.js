@@ -1,3 +1,7 @@
+import {
+  SET_LOADING,
+} from '../actions/types';
+
 // Create the initial state of the forecastReducer
 const initialState = {
   loading: false,
@@ -14,6 +18,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
 
     default:
       return state;
