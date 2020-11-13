@@ -1,6 +1,7 @@
 import {
   FORECAST_ERROR,
   GET_WEATHER_FORECAST,
+  GET_WEATHER_FORECAST_LOCATION,
   SET_LOADING,
 } from '../actions/types';
 
@@ -34,6 +35,14 @@ export default (state = initialState, action) => {
         ...state,
         // payload: fiveDayWeatherForcastArray,
         fiveDayWeatherForecastArray: action.payload,
+        loading: false,
+      }
+
+    case GET_WEATHER_FORECAST_LOCATION:
+      return {
+        ...state,
+        // payload: 'City, Country'
+        weatherForcastLocation: action.payload,
         loading: false,
       }
 
