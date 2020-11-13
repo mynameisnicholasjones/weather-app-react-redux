@@ -1,4 +1,5 @@
 import {
+  FORECAST_ERROR,
   SET_LOADING,
 } from '../actions/types';
 
@@ -18,6 +19,15 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case FORECAST_ERROR:
+      console.error(action.payload);
+      return {
+        ...state,
+        // payload: error.response.statusText
+        error: action.payload,
+        loading: false,
+      };
+
     case SET_LOADING:
       return {
         ...state,
