@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+// NOTE: Whenever you call an action from a component, you have to import that action
+import { getWeatherForecastAction } from '../../actions/forecastActions';
 
-const Search = ({ showAlert, getWeatherForecastData }) => {
+const Search = ({ getWeatherForecastAction, showAlert }) => {
   // Component level state used in search input form.
   const [searchText, setSearchText] = useState('');
 
@@ -19,7 +22,7 @@ const Search = ({ showAlert, getWeatherForecastData }) => {
       showAlert('Please enter a location', 'danger');
     } else {
       // Get the weather forecast
-      getWeatherForecastData(searchText);
+      getWeatherForecastAction(searchText);
 
       setSearchText('');
     }
@@ -50,4 +53,6 @@ Search.propTypes = {
   getWeatherForecastData: PropTypes.func.isRequired,
 }
 
-export default Search;
+// NOTE: Since mapStateToProps is not used in this component, the
+// first arguement for connect is null.
+export default connect(null, { getWeatherForecastAction })(Search);
