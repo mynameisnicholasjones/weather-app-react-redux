@@ -9,6 +9,12 @@ const Search = ({ getWeatherForecastAction, setAlertAction }) => {
   // Component level state used in search input form.
   const [searchText, setSearchText] = useState('');
 
+  useEffect(() => {
+    // Get the weather data for New York, US as soon as the search component loads. This will provide the user with a default set of weather data to look at as soon as they begin using the weather app.
+    const defaultSearchText = 'New York';
+    getWeatherForecastAction(defaultSearchText);
+  }, []);
+
   // Whenever the user types into the searchText input, the searchText state is set to the inputted value
   const onChangeSearchText = (event) => {
     setSearchText(event.target.value);
