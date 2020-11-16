@@ -70,7 +70,7 @@ export const getWeatherForecastAction = (searchText) => async (dispatch) => {
 
       dispatch({
         type: GET_WEATHER_FORECAST,
-        payload: fiveDayWeatherForecastArray,
+        payload: fiveDayWeatherForecastTemporaryArray,
       });
     }
   } catch (error) {
