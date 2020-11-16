@@ -40,12 +40,6 @@ function App() {
     getWeatherForecastData(searchText);
   }, []);
 
-  // This function gets the value to be used in showFiveDayForecastFlag and
-  // then sets showFiveDayForecastFlag to that value.
-  const getShowFiveDayForecastFlag = (ShowFiveDayForecastFlagBooleanValue) => {
-    setShowFiveDayForecastFlag(ShowFiveDayForecastFlagBooleanValue);
-  };
-
   // This function sets the userClickedWeatherForecastObject state to be
   // equal to the single day weather forecast object that the user clicked on.
   const getUserClickedWeatherForecastObject = (singleDayWeatherForecastObject) => {
@@ -109,7 +103,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          <Navbar getShowFiveDayForecastFlag={getShowFiveDayForecastFlag} />
+          <Navbar />
           <main className="main-container">
             <Alert alert={alert} />
             <Search
