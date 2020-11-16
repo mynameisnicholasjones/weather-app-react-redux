@@ -11,7 +11,7 @@ const initialState = {
   loading: false,
   error: null,
   // NOTE: Default value is 'true' because the five-day forecast should show by default
-  fiveDayForecastFlag: true,
+  showFiveDayForecastFlag: true,
   // Data type is: []
   fiveDayWeatherForecastArray: null,
   // Data type is: {}
@@ -34,8 +34,8 @@ export default (state = initialState, action) => {
     case GET_SHOW_FIVE_DAY_FORECAST_FLAG:
       return {
         ...state,
-        // payload: fiveDayForecastFlag
-        fiveDayForecastFlag: action.payload,
+        // payload: showFiveDayForecastFlag
+        showFiveDayForecastFlag: action.payload,
       }
 
     case GET_WEATHER_FORECAST:
