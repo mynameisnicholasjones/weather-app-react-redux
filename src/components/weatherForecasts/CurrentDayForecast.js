@@ -7,7 +7,6 @@ import ForecastItem from '../weatherForecasts/ForecastItem';
 const CurrentDayForecast = ({
   fiveDayWeatherForecastArray,
   loading,
-  showFiveDayForecastFlag,
   getUserClickedWeatherForecastObject,
 }) => {
   // The user has not search for anything yet, so fiveDayWeatherForecastArray is 'null' and there is nothing to show.
@@ -20,7 +19,6 @@ const CurrentDayForecast = ({
       <ForecastItem
         // Get the current day weather forecast object from the first element in the fiveDayWeatherForcastArray
         singleDayWeatherForecastObject={fiveDayWeatherForecastArray[0]}
-        showFiveDayForecastFlag={showFiveDayForecastFlag}
         getUserClickedWeatherForecastObject={getUserClickedWeatherForecastObject}
       />
     );
