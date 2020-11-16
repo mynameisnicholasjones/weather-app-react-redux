@@ -24,8 +24,6 @@ function App() {
   // fiveDayWeatherForecastArray data type is: []
   const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray]
     = useState(null);
-  // NOTE: showFiveDayForecast data type is: Boolean
-  const [showFiveDayForecastFlag, setShowFiveDayForecastFlag] = useState(true);
   // NOTE: userClickedWeatherForecastObject data type is: {}
   const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
   // weatherLocation data type is: string
@@ -125,7 +123,6 @@ function App() {
                   <FiveDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                     loading={loading}
-                    showFiveDayForecastFlag={showFiveDayForecastFlag}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
@@ -141,7 +138,6 @@ function App() {
                   <CurrentDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                     loading={loading}
-                    showFiveDayForecastFlag={showFiveDayForecastFlag}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
