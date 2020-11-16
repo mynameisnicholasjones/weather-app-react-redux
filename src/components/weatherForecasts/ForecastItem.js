@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { getWeatherImage } from '../../helpers/helperFunctions';
+// Imports for using Redux app level state inside a component
+import { connect } from 'react-redux';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
 const ForecastItem = ({
+  forecastReducerStateAsAProp: { showFiveDayForecastFlag },
   singleDayWeatherForecastObject,
-  showFiveDayForecastFlag,
   getUserClickedWeatherForecastObject,
 }) => {
   const onClickGetUserClickedWeatherForecastObject = () => {
@@ -66,7 +68,12 @@ const ForecastItem = ({
 }
 
 ForecastItem.propTypes = {
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
   singleDayWeatherForecastObject: PropTypes.object.isRequired,
-}
+};
 
-export default ForecastItem
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps)(ForecastItem);
