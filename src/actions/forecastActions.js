@@ -11,11 +11,11 @@ import { getAPICallValueForOpenWeatherMapDotOrg } from '../helpers/helperFunctio
 
 import { setAlertAction } from './alertActions';
 
-export const getShowFiveDayForecastFlagAction = (fiveDayForecastFlag) => {
+export const getShowFiveDayForecastFlagAction = (showFiveDayForecastFlag) => {
   return {
     type: GET_SHOW_FIVE_DAY_FORECAST_FLAG,
     // Data type is: bool
-    payload: fiveDayForecastFlag,
+    payload: showFiveDayForecastFlag,
   }
 }
 
