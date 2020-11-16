@@ -1,5 +1,6 @@
 import {
   FORECAST_ERROR,
+  GET_SHOW_FIVE_DAY_FORECAST_FLAG,
   GET_WEATHER_FORECAST,
   GET_WEATHER_FORECAST_LOCATION,
   SET_LOADING,
@@ -9,6 +10,14 @@ import {
 import { getAPICallValueForOpenWeatherMapDotOrg } from '../helpers/helperFunctions';
 
 import { setAlertAction } from './alertActions';
+
+export const getShowFiveDayForecastFlagAction = (fiveDayForecastFlag) => {
+  return {
+    type: GET_SHOW_FIVE_DAY_FORECAST_FLAG,
+    // Data type is: bool
+    payload: fiveDayForecastFlag,
+  }
+}
 
 // Get the weather forecast data for a given location
 export const getWeatherForecastAction = (searchText) => async (dispatch) => {
