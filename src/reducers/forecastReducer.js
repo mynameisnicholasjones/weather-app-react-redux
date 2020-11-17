@@ -41,7 +41,7 @@ export default (state = initialState, action) => {
     case GET_WEATHER_FORECAST:
       return {
         ...state,
-        // payload: fiveDayWeatherForcastArray,
+        // payload: fiveDayWeatherForecastArray,
         fiveDayWeatherForecastArray: action.payload,
         loading: false,
       }
