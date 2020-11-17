@@ -56,8 +56,8 @@ const Search = ({ getWeatherForecastAction, setAlertAction }) => {
 };
 
 Search.propTypes = {
-  showAlert: PropTypes.func.isRequired,
-  getWeatherForecastData: PropTypes.func.isRequired,
+  getWeatherForecastAction: PropTypes.func.isRequired,
+  setAlertAction: PropTypes.func.isRequired,
 }
 
 // NOTE: Since mapStateToProps is not used in this component, the
