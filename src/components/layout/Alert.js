@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const Alert = ({ alertReducerStateAsAProp: alert }) => {
+const Alert = ({ alertReducerStateAsAProp: { alert } }) => {
   // If the alert prop is null or undefined then return null,
   // else, return a styled div with the alert_text and alert_type.
   if (alert === null || alert === 'undefined') {
