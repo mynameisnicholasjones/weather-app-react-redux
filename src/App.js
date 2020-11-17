@@ -17,8 +17,6 @@ import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
 import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDayForecast';
 
 function App() {
-  // loading data type is: bool
-  const [loading, setLoading] = useState(false);
   // fiveDayWeatherForecastArray data type is: []
   const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray]
     = useState(null);
@@ -54,7 +52,6 @@ function App() {
             />
             <WeatherHeader
               weatherLocation={weatherLocation}
-              loading={loading}
             />
 
             <Switch>
@@ -66,7 +63,6 @@ function App() {
                 render={(props) => (
                   <FiveDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                    loading={loading}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
@@ -81,7 +77,6 @@ function App() {
                 render={(props) => (
                   <CurrentDayForecast
                     fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
-                    loading={loading}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
@@ -98,7 +93,6 @@ function App() {
                     userClickedWeatherForecastObject={
                       userClickedWeatherForecastObject
                     }
-                    loading={loading}
                   />
                 )}
               />
