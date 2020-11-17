@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 // React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -20,15 +20,6 @@ function App() {
   // NOTE: userClickedWeatherForecastObject data type is: {}
   const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
 
-  useEffect(() => {
-    // Location to get weather data for.
-    const searchText = 'New York, US';
-
-    // Call getWeatherForecastData one time as soon as the component loads.
-    // This weather data will be output when the app initially loads in order to give the user default weather data.
-    getWeatherForecastData(searchText);
-  }, []);
-
   // This function sets the userClickedWeatherForecastObject state to be
   // equal to the single day weather forecast object that the user clicked on.
   const getUserClickedWeatherForecastObject = (singleDayWeatherForecastObject) => {
@@ -42,9 +33,7 @@ function App() {
           <Navbar />
           <main className="main-container">
             <Alert />
-            <Search
-              getWeatherForecastData={getWeatherForecastData}
-            />
+            <Search />
             <WeatherHeader
               weatherLocation={weatherLocation}
             />
