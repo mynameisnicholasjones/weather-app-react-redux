@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         // payload: 'City, Country'
-        weatherForcastLocation: action.payload,
+        weatherForecastLocation: action.payload,
         loading: false,
       }
 
