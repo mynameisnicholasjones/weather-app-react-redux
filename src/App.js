@@ -17,8 +17,6 @@ import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
 import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDayForecast';
 
 function App() {
-  // Alert data type is: {}
-  const [alert, setAlert] = useState(null);
   // loading data type is: bool
   const [loading, setLoading] = useState(false);
   // fiveDayWeatherForecastArray data type is: []
@@ -61,7 +59,7 @@ function App() {
     if (data.message === 'city not found') {
       console.log('city not found');
 
-      showAlert(`Unable to find location: "${searchText}". Please try again.`, 'danger');
+      // showAlert(`Unable to find location: "${searchText}". Please try again.`, 'danger');
 
     } else {
       console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
@@ -91,21 +89,14 @@ function App() {
     setLoading(false);
   };
 
-  // When showAlert is called, the alert is set and then removed after 5 seconds.
-  const showAlert = (alertText, alertType) => {
-    setAlert({ alertText: alertText, alertType: alertType });
-    setTimeout(() => setAlert(null), 5000);
-  };
-
   return (
     <Provider store={store}>
       <Router>
         <div className="App">
           <Navbar />
           <main className="main-container">
-            <Alert alert={alert} />
+            <Alert />
             <Search
-              showAlert={showAlert}
               getWeatherForecastData={getWeatherForecastData}
             />
             <WeatherHeader
