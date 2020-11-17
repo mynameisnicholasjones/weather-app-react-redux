@@ -17,9 +17,6 @@ import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
 import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDayForecast';
 
 function App() {
-  // fiveDayWeatherForecastArray data type is: []
-  const [fiveDayWeatherForecastArray, setFiveDayWeatherForecastArray]
-    = useState(null);
   // NOTE: userClickedWeatherForecastObject data type is: {}
   const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
   // weatherLocation data type is: string
@@ -62,7 +59,6 @@ function App() {
                 path="/"
                 render={(props) => (
                   <FiveDayForecast
-                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
@@ -76,7 +72,6 @@ function App() {
                 path="/current-day-forecast"
                 render={(props) => (
                   <CurrentDayForecast
-                    fiveDayWeatherForecastArray={fiveDayWeatherForecastArray}
                     getUserClickedWeatherForecastObject={
                       getUserClickedWeatherForecastObject
                     }
