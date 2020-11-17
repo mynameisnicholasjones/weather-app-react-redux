@@ -19,8 +19,6 @@ import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDa
 function App() {
   // NOTE: userClickedWeatherForecastObject data type is: {}
   const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
-  // weatherLocation data type is: string
-  const [weatherLocation, setWeatherLocation] = useState(null);
 
   useEffect(() => {
     // Location to get weather data for.
