@@ -34,9 +34,7 @@ function App() {
           <main className="main-container">
             <Alert />
             <Search />
-            <WeatherHeader
-              weatherLocation={weatherLocation}
-            />
+            <WeatherHeader />
 
             <Switch>
 
