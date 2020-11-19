@@ -1,6 +1,7 @@
 import {
   FORECAST_ERROR,
   GET_SHOW_FIVE_DAY_FORECAST_FLAG,
+  GET_USER_CLICKED_WEATHER_FORECAST_OBJECT,
   GET_WEATHER_FORECAST,
   GET_WEATHER_FORECAST_LOCATION,
   SET_LOADING,
@@ -18,6 +19,13 @@ export const getShowFiveDayForecastFlagAction = (showFiveDayForecastFlag) => {
     payload: showFiveDayForecastFlag,
   }
 }
+
+export const getUserClickedWeatherForecastObjectAction = (userClickedWeatherForecastObject) => {
+  return {
+    type: GET_USER_CLICKED_WEATHER_FORECAST_OBJECT,
+    payload: userClickedWeatherForecastObject,
+  }
+};
 
 // Get the weather forecast data for a given location
 export const getWeatherForecastAction = (searchText) => async (dispatch) => {
