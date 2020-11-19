@@ -1,6 +1,7 @@
 import {
   FORECAST_ERROR,
   GET_SHOW_FIVE_DAY_FORECAST_FLAG,
+  GET_USER_CLICKED_WEATHER_FORECAST_OBJECT,
   GET_WEATHER_FORECAST,
   GET_WEATHER_FORECAST_LOCATION,
   SET_LOADING,
@@ -36,6 +37,13 @@ export default (state = initialState, action) => {
         ...state,
         // payload: showFiveDayForecastFlag
         showFiveDayForecastFlag: action.payload,
+      }
+
+    case GET_USER_CLICKED_WEATHER_FORECAST_OBJECT:
+      return {
+        ...state,
+        // payload: userClickedWeatherForecastObject
+        userClickedWeatherForecastObject: action.payload,
       }
 
     case GET_WEATHER_FORECAST:
