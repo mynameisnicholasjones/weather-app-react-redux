@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // Imports for Components
 import Preloader from './Preloader';
 
-const WeatherHeader = ({ weatherLocation, loading }) => {
-  if (weatherLocation === null) {
+const WeatherHeader = ({
+  forecastReducerStateAsAProp: { loading, weatherForecastLocation },
+}) => {
+  if (weatherForecastLocation === null) {
     // The user has not search for anything yet, so weather is 'null' and there is nothing to show.
     return null;
   } else if (loading) {
     return <Preloader />;
   } else {
-    return <div className="weatherHeader text-light">{weatherLocation}</div>;
+    return <div className="weatherHeader text-light">{weatherForecastLocation}</div>;
   }
 };
 
 WeatherHeader.propTypes = {
-  weatherLocation: PropTypes.string,
+  weatherForecastLocation: PropTypes.string,
   loading: PropTypes.bool.isRequired,
 }
 
-export default WeatherHeader;
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps)(WeatherHeader);
