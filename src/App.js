@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 // React Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// Imported helper functions
-import { getAPICallValueForOpenWeatherMapDotOrg } from './helpers/helperFunctions';
 // Imports for Redux
 import { Provider } from 'react-redux';
 import store from './store';
