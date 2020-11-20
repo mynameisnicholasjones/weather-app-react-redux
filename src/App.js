@@ -17,15 +17,6 @@ import FiveDayForecast from './components/weatherForecasts/FiveDayForecast';
 import MoreDetailsSingleDayForecast from './components/pages/MoreDetailsSingleDayForecast';
 
 function App() {
-  // NOTE: userClickedWeatherForecastObject data type is: {}
-  const [userClickedWeatherForecastObject, setUserClickedWeatherForecastObject] = useState(null);
-
-  // This function sets the userClickedWeatherForecastObject state to be
-  // equal to the single day weather forecast object that the user clicked on.
-  const getUserClickedWeatherForecastObject = (singleDayWeatherForecastObject) => {
-    setUserClickedWeatherForecastObject(singleDayWeatherForecastObject);
-  };
-
   return (
     <Provider store={store}>
       <Router>
@@ -43,11 +34,7 @@ function App() {
                 exact
                 path="/"
                 render={(props) => (
-                  <FiveDayForecast
-                    getUserClickedWeatherForecastObject={
-                      getUserClickedWeatherForecastObject
-                    }
-                  />
+                  <FiveDayForecast />
                 )}
               />
 
@@ -56,11 +43,7 @@ function App() {
                 exact
                 path="/current-day-forecast"
                 render={(props) => (
-                  <CurrentDayForecast
-                    getUserClickedWeatherForecastObject={
-                      getUserClickedWeatherForecastObject
-                    }
-                  />
+                  <CurrentDayForecast />
                 )}
               />
 
@@ -69,11 +52,7 @@ function App() {
                 exact
                 path="/more-details-single-day-forecast"
                 render={(props) => (
-                  <MoreDetailsSingleDayForecast
-                    userClickedWeatherForecastObject={
-                      userClickedWeatherForecastObject
-                    }
-                  />
+                  <MoreDetailsSingleDayForecast />
                 )}
               />
 
