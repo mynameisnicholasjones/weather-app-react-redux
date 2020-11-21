@@ -17,7 +17,7 @@ const Alert = ({ alertReducerStateAsAProp: { alert } }) => {
 };
 
 Alert.propTypes = {
-  alert: PropTypes.object,
+  alertReducerStateAsAProp: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state) => ({
