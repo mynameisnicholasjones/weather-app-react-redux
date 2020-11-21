@@ -4,12 +4,15 @@ import Moment from 'react-moment';
 import {
   getWeatherImage,
 } from '../../helpers/helperFunctions';
+import { connect } from 'react-redux';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
 const MoreDetailsSingleDayForecast = ({
-  userClickedWeatherForecastObject,
-  loading,
+  forecastReducerStateAsAProp: {
+    loading,
+    userClickedWeatherForecastObject
+  }
 }) => {
   // Use the useHistory hook from react-router-dom to make clicking the back button go to the previous page.
   const history = useHistory();
@@ -123,4 +126,8 @@ const MoreDetailsSingleDayForecast = ({
   }
 };
 
-export default MoreDetailsSingleDayForecast;
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps)(MoreDetailsSingleDayForecast);
