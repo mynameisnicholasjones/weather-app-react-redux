@@ -5,6 +5,8 @@ import {
   getWeatherImage,
 } from '../../helpers/helperFunctions';
 import { connect } from 'react-redux';
+// Imports for using Redux app level state inside a component
+import PropTypes from 'prop-types';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
@@ -124,6 +126,10 @@ const MoreDetailsSingleDayForecast = ({
       </div>
     );
   }
+};
+
+MoreDetailsSingleDayForecast.propTypes = {
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
