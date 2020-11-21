@@ -71,6 +71,7 @@ const ForecastItem = ({
 
 ForecastItem.propTypes = {
   forecastReducerStateAsAProp: PropTypes.object.isRequired,
+  getUserClickedWeatherForecastObjectAction: PropTypes.func.isRequired,
   singleDayWeatherForecastObject: PropTypes.object.isRequired,
 };
 
