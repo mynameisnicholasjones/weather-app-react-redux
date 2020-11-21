@@ -18,8 +18,7 @@ const WeatherHeader = ({
 };
 
 WeatherHeader.propTypes = {
-  weatherForecastLocation: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state) => ({
