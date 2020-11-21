@@ -74,7 +74,7 @@ const MoreDetailsSingleDayForecast = ({
             </div>
 
             {/* Back Button */}
-            <Link
+            <button
               className="btn btn-dark btn-sm"
               style={{
                 fontSize: 'clamp(0.7rem, 2vw, 1.5rem)',
@@ -83,7 +83,7 @@ const MoreDetailsSingleDayForecast = ({
               onClick={onClickGoToPreviousPage}
             >
               Back
-            </Link>
+            </button>
           </div>
         </div>
 
