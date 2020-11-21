@@ -10,7 +10,6 @@ const FiveDayForecast = ({
   fiveDayWeatherForecastArray,
   forecastReducerStateAsAProp: { showFiveDayForecastFlag },
   loading,
-  getUserClickedWeatherForecastObject,
 }) => {
   // The user has not search for anything yet, so singleDayWeatherForecastObject is 'null' and there is nothing to show.
   if (fiveDayWeatherForecastArray === null) {
@@ -28,7 +27,6 @@ const FiveDayForecast = ({
               singleDayWeatherForecastObject={singleDayWeatherForecastObject}
               // NOTE: There are no stable IDs for rendered items, so you may use the item index as a key as a last resort:
               key={index}
-              getUserClickedWeatherForecastObject={getUserClickedWeatherForecastObject}
             />
           )
         )}
