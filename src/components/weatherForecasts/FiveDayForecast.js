@@ -7,9 +7,11 @@ import Preloader from '../layout/Preloader';
 import ForecastItem from './ForecastItem';
 
 const FiveDayForecast = ({
-  fiveDayWeatherForecastArray,
-  forecastReducerStateAsAProp: { showFiveDayForecastFlag },
-  loading,
+  forecastReducerStateAsAProp: {
+     fiveDayWeatherForecastArray,
+     loading,
+     showFiveDayForecastFlag
+   },
 }) => {
   // The user has not search for anything yet, so singleDayWeatherForecastObject is 'null' and there is nothing to show.
   if (fiveDayWeatherForecastArray === null) {
