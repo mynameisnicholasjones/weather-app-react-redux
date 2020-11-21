@@ -10,7 +10,6 @@ const CurrentDayForecast = ({
     fiveDayWeatherForecastArray,
     loading,
   },
-  getUserClickedWeatherForecastObject,
 }) => {
   // The user has not search for anything yet, so fiveDayWeatherForecastArray is 'null' and there is nothing to show.
   if (fiveDayWeatherForecastArray === null) {
@@ -22,7 +21,6 @@ const CurrentDayForecast = ({
       <ForecastItem
         // Get the current day weather forecast object from the first element in the fiveDayWeatherForcastArray
         singleDayWeatherForecastObject={fiveDayWeatherForecastArray[0]}
-        getUserClickedWeatherForecastObject={getUserClickedWeatherForecastObject}
       />
     );
   }
