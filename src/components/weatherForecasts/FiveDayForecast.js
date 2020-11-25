@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// Imports for using Redux app level state inside a component
+import { connect } from 'react-redux';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 import ForecastItem from './ForecastItem';
 
 const FiveDayForecast = ({
-  fiveDayWeatherForecastArray,
-  loading,
-  showFiveDayForecastFlag,
-  getUserClickedWeatherForecastObject,
+  forecastReducerStateAsAProp: {
+     fiveDayWeatherForecastArray,
+     loading,
+     showFiveDayForecastFlag
+   },
 }) => {
   // The user has not search for anything yet, so singleDayWeatherForecastObject is 'null' and there is nothing to show.
   if (fiveDayWeatherForecastArray === null) {
@@ -26,8 +29,6 @@ const FiveDayForecast = ({
               singleDayWeatherForecastObject={singleDayWeatherForecastObject}
               // NOTE: There are no stable IDs for rendered items, so you may use the item index as a key as a last resort:
               key={index}
-              showFiveDayForecastFlag={showFiveDayForecastFlag}
-              getUserClickedWeatherForecastObject={getUserClickedWeatherForecastObject}
             />
           )
         )}
@@ -37,8 +38,11 @@ const FiveDayForecast = ({
 };
 
 FiveDayForecast.propTypes = {
-  fiveDayWeatherForecastArray: PropTypes.array,
-  loading: PropTypes.bool.isRequired,
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
 }
 
-export default FiveDayForecast;
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps)(FiveDayForecast);

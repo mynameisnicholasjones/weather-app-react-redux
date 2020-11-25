@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 import ForecastItem from '../weatherForecasts/ForecastItem';
 
 const CurrentDayForecast = ({
-  fiveDayWeatherForecastArray,
-  loading,
-  showFiveDayForecastFlag,
-  getUserClickedWeatherForecastObject,
+  forecastReducerStateAsAProp: {
+    fiveDayWeatherForecastArray,
+    loading,
+  },
 }) => {
   // The user has not search for anything yet, so fiveDayWeatherForecastArray is 'null' and there is nothing to show.
   if (fiveDayWeatherForecastArray === null) {
@@ -20,16 +21,17 @@ const CurrentDayForecast = ({
       <ForecastItem
         // Get the current day weather forecast object from the first element in the fiveDayWeatherForcastArray
         singleDayWeatherForecastObject={fiveDayWeatherForecastArray[0]}
-        showFiveDayForecastFlag={showFiveDayForecastFlag}
-        getUserClickedWeatherForecastObject={getUserClickedWeatherForecastObject}
       />
     );
   }
 };
 
 CurrentDayForecast.propTypes = {
-  fiveDayWeatherForecastArray: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
 }
 
-export default CurrentDayForecast;
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps)(CurrentDayForecast);

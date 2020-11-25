@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+// NOTE: Whenever you call an action from a component, you have to import that action
+import { getShowFiveDayForecastFlagAction } from '../../actions/forecastActions';
 
-const Navbar = ({ getShowFiveDayForecastFlag }) => {
+const Navbar = ({ getShowFiveDayForecastFlagAction }) => {
   const onClickToggleActiveForecastButton = (event) => {
     const currentDayForecastBtn = document.getElementById('current-day-forecast-btn');
     const fiveDayForecastBtn = document.getElementById('five-day-forecast-btn');
@@ -13,7 +17,7 @@ const Navbar = ({ getShowFiveDayForecastFlag }) => {
       console.log('The Current-Day Forecast Button is Active');
 
       // Get the Boolean value to determine if the single-day forecast should be displayed or the five-day forecast should be displayed
-      getShowFiveDayForecastFlag(false);
+      getShowFiveDayForecastFlagAction(false);
     } else {
       fiveDayForecastBtn.className = 'btn btn-active';
       currentDayForecastBtn.className = 'btn btn-not-active';
@@ -21,7 +25,7 @@ const Navbar = ({ getShowFiveDayForecastFlag }) => {
       console.log('The Five-Day Forecast Button is Active');
 
       // Get the Boolean value to determine if the single-day forecast should be displayed or the five-day forecast should be displayed
-      getShowFiveDayForecastFlag(true);
+      getShowFiveDayForecastFlagAction(true);
     }
   };
 
@@ -62,4 +66,10 @@ const Navbar = ({ getShowFiveDayForecastFlag }) => {
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  getShowFiveDayForecastFlagAction: PropTypes.func.isRequired,
+};
+
+// NOTE: Since mapStateToProps is not used in this component, the
+// first arguement for connect is null.
+export default connect(null, {getShowFiveDayForecastFlagAction})(Navbar);

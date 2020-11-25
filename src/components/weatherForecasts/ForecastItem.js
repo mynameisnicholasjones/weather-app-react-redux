@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { getWeatherImage } from '../../helpers/helperFunctions';
+// Imports for using Redux app level state inside a component
+import { connect } from 'react-redux';
+// NOTE: Whenever you call an action from a component, you have to import that action
+import { getUserClickedWeatherForecastObjectAction } from '../../actions/forecastActions';
 // Imports for Components
 import Preloader from '../layout/Preloader';
 
 const ForecastItem = ({
+  forecastReducerStateAsAProp: { showFiveDayForecastFlag },
+  getUserClickedWeatherForecastObjectAction,
   singleDayWeatherForecastObject,
-  showFiveDayForecastFlag,
-  getUserClickedWeatherForecastObject,
 }) => {
   const onClickGetUserClickedWeatherForecastObject = () => {
-    getUserClickedWeatherForecastObject(singleDayWeatherForecastObject);
+    getUserClickedWeatherForecastObjectAction(singleDayWeatherForecastObject);
   };
 
   if (singleDayWeatherForecastObject === null) {
@@ -66,7 +70,13 @@ const ForecastItem = ({
 }
 
 ForecastItem.propTypes = {
+  forecastReducerStateAsAProp: PropTypes.object.isRequired,
+  getUserClickedWeatherForecastObjectAction: PropTypes.func.isRequired,
   singleDayWeatherForecastObject: PropTypes.object.isRequired,
-}
+};
 
-export default ForecastItem
+const mapStateToProps = (state) => ({
+  forecastReducerStateAsAProp: state.forecastReducerState,
+});
+
+export default connect(mapStateToProps, { getUserClickedWeatherForecastObjectAction })(ForecastItem);
