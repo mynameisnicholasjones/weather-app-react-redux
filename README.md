@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather App using React and Redux 
 
-## Available Scripts
+A Weather App that enables the user to search for weather data for either a current-day forecast or a five-day forecast using a location's zip code, a locations city and state (if withing the USA), or a locations city and country.
 
-In the project directory, you can run:
+**Version 1.0.0**
 
-### `npm start`
+# Contributors
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Nicholas Jones https://mynameisnicholasjones.com/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Motivation
 
-### `npm test`
+A Weather App designed to demonstrate my understanding of React and Redux.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Build status
 
-### `npm run build`
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bc2e32c3-f044-4bbf-9b45-45dd8a7ff872/deploy-status)](https://app.netlify.com/sites/weather-app-react-redux-nicholas-jones/deploys)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Screenshot of Weather App
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Weather App Preview Image](public/appPreviewImages/weather-app-preview-img.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Tech / framework used
 
-### `npm run eject`
+**This weather app was built with:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Visual Studio Code
+* Node Package Manager (NPM)
+* [React](https://reactjs.org/)
+* React Router
+* Redux
+* Fetch API
+* [OpenWeatherMap.org's Weather API](https://openweathermap.org/)
+* Javascript
+* HTML5
+* CSS3
+* Git
+* GitHub
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Multiple Forecast Types
+  * Five-Day Forecast
+  * Single-Day Forecast
+* More Details Page
+* User History for Back Button
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Credits
 
-## Learn More
+This software uses the following open source packages:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * [Node.js](https://nodejs.org/en/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License and copyright
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+© Nicholas Jones
