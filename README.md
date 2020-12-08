@@ -18,7 +18,7 @@ A Weather App designed to demonstrate my understanding of React and Redux.
 
 # Screenshot of Weather App
 
-![Weather App Preview Image](public/appPreviewImages/weather-app-preview-img.png)
+[![Weather App Preview Image](public/appPreviewImages/weather-app-preview-img.png)](https://weatherapp.mynameisnicholasjones.com)
 
 # Tech / framework used
 
