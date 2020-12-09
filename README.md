@@ -1,6 +1,6 @@
 # A Weather App using React and Redux 
 
-A Weather App that enables the user to search for a five-day weather forecast or a current-day weather forecast using a location's zip code, a location's city and state (if within the USA), or a locations city and country. After searching for a weather forecast, the user can click on the "Details" button of a paticular day of the week to see more weather details.
+A Weather App that enables the user to search for a five-day weather forecast or a current-day weather forecast using a location's zip code, a location's city and state (if within the USA), or a location's city and country. After searching for a weather forecast, the user can click on the "Details" button of a particular day of the week to see more weather details.
 
 **Version 1.0.0**
 
