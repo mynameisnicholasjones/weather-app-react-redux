@@ -9,7 +9,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_ALERT:
-      console.log('Set Alert!');
       return {
         ...state,
         // payload: { alertText, alertType }
@@ -17,7 +16,6 @@ export default (state = initialState, action) => {
       };
 
     case REMOVE_ALERT:
-      console.log('Remove Alert!');
       return {
         ...state,
         // payload: null
