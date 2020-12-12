@@ -41,17 +41,13 @@ export const getWeatherForecastAction = (searchText) => async (dispatch) => {
     // Format the res into the data
     const data = await res.json();
 
-    console.log(data);
-
     // Handle the error if api did not find the city the user searched for.
     if (data.message === 'city not found') {
-      console.log('city not found');
 
       dispatch(
         setAlertAction(`Unable to find location: "${searchText}". Please try again.`, 'danger')
       );
     } else {
-      console.log(`The weather data for ${data.city.name}, ${data.city.country} is: ${JSON.stringify(data)}`);
 
       // Get the location of the weather. (i.e. The city and country name)
       dispatch({
@@ -70,11 +66,6 @@ export const getWeatherForecastAction = (searchText) => async (dispatch) => {
           fiveDayWeatherForecastTemporaryArray.push(weatherObject);
         }
       });
-
-      // Console log the five weather objects to verify that the data is being retrieved correctly.
-      fiveDayWeatherForecastTemporaryArray.forEach((weatherObject, index) => {
-        console.log(`Weather Object ${(index + 1)}: ${JSON.stringify(weatherObject)}`);
-      })
 
       dispatch({
         type: GET_WEATHER_FORECAST,
