@@ -24,18 +24,18 @@ A Weather App designed to demonstrate my understanding of React and Redux.
 
 **This weather app was built with:**
 
-* Visual Studio Code
+* CSS3
+* Fetch API
+* Git
+* GitHub
+* HTML5
+* Javascript
 * Node Package Manager (NPM)
+* [OpenWeatherMap.org's Weather API](https://openweathermap.org/)
 * [React](https://reactjs.org/)
 * React Router
 * Redux
-* Fetch API
-* [OpenWeatherMap.org's Weather API](https://openweathermap.org/)
-* Javascript
-* HTML5
-* CSS3
-* Git
-* GitHub
+* Visual Studio Code
 
 # Features
 
