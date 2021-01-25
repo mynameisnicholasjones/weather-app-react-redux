@@ -58,7 +58,7 @@ export const getWeatherForecastAction = (searchText) => async (dispatch) => {
       // Store 5 days of weather data in an array. This will be used to display either the current-day forecast or the five-day forecast to the user.
       let fiveDayWeatherForecastTemporaryArray = [];
 
-      data.list.map((weatherObject, index) => {
+      data.list.forEach((weatherObject, index) => {
         // Get the first five weather objects that's index is divisible by 8
         // IMPORTANT NOTE: The OpenWeatherMap.org API returns 40 items (i.e. index 0 through 39). This means that you will always get only five values that divide into 8 without any remainder (i.e. 0, 8, 16, 24, and 32).
         // So it does not matter which time of day the database is quieried, you will always get the desired five weather objects.
