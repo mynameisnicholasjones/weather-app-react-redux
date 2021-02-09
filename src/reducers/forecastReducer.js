@@ -59,7 +59,6 @@ export default (state = initialState, action) => {
         ...state,
         // payload: 'City, Country'
         weatherForecastLocation: action.payload,
-        loading: false,
       }
 
     case SET_LOADING:
