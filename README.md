@@ -53,4 +53,4 @@ This software uses the following open source packages:
 
 ## License and copyright
 
-Copyright © 2020 - Nicholas Jones
+Copyright © 2021 - Nicholas Jones
