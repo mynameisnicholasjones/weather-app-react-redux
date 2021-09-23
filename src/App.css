@@ -78,6 +78,7 @@ img {
 .card {
   border: #ccc 1px dotted;
   padding: 1rem 0.75rem 0.75rem 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .badge {
@@ -433,6 +434,8 @@ button {
   border-top: solid 1px #ccc;
   margin-top: 1rem;
   padding-top: 1rem;
+  /* margin-bottom: 5rem; */
   /* font-size: clamp(1rem, 4vw, 2.2rem); */
+
   font-size: clamp(1rem, 4vw, 1.7rem);
 };
