@@ -310,7 +310,7 @@ button {
 
 .weatherHeader {
   text-align: center;
-  font-size: clamp(1.5rem, 11.5vw, 6rem);
+  font-size: clamp(1.5rem, 11.5vw, 4rem);
 }
 
 /*****************************/
@@ -351,7 +351,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.5rem, 6vw, 6rem);
+  font-size: clamp(1.5rem, 6vw, 3rem);
 }
 
 .weatherImage {
@@ -371,16 +371,19 @@ button {
 }
 
 .weatherDetails__weatherDescription {
-  font-size: clamp(1rem, 4vw, 2.2rem);
+  /* font-size: clamp(1rem, 4vw, 2.2rem); */
+  font-size: clamp(1rem, 4vw, 2rem);
 }
 
 .weatherDetails__weatherTemp {
-  font-size: clamp(1rem, 4vw, 2.2rem);
+  /* font-size: clamp(1rem, 4vw, 2.2rem); */
+  font-size: clamp(1rem, 4vw, 2rem);
 }
 
 .weatherDetails__detailsBtn,
 .weatherBack__detailsBtn {
-  font-size: clamp(0.7rem, 2vw, 1.5rem);
+  /* font-size: clamp(0.7rem, 2vw, 1.5rem); */
+  font-size: clamp(0.7rem, 2vw, 1rem);
   margin: 0.7em 0;
 }
 
@@ -430,5 +433,6 @@ button {
   border-top: solid 1px #ccc;
   margin-top: 1rem;
   padding-top: 1rem;
-  font-size: clamp(1rem, 4vw, 2.2rem);
+  /* font-size: clamp(1rem, 4vw, 2.2rem); */
+  font-size: clamp(1rem, 4vw, 1.7rem);
 };
